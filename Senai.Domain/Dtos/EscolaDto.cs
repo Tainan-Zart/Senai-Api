@@ -1,4 +1,5 @@
-﻿using Senai.Domain.Entidades;
+﻿using Senai.Domain.Dtos;
+using Senai.Domain.Entidades;
 using System.ComponentModel.DataAnnotations;
 
 namespace Senai.Domain.NovaPasta1
@@ -7,7 +8,10 @@ namespace Senai.Domain.NovaPasta1
     public class EscolaDto
         {
             [Required, MaxLength(60)]
-            public string nome { get; set; } = string.Empty;
+            public string Nome { get; set; } = string.Empty;
+
+           
+            public EnderecoDto Endereco { get; set; }   
 
         }
 }

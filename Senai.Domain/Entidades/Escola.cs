@@ -5,7 +5,7 @@ namespace Senai.Domain.Entidades
     public class Escola : BaseEntity
     {
         [Required, MaxLength(60)]
-        public string nome { get; set; }  = string.Empty;
+        public string Nome { get; set; }  = string.Empty;
 
         public Endereco Endereco { get; set; }
 

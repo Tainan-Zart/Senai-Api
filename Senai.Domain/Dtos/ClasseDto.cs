@@ -3,7 +3,7 @@ using Senai.Domain.Enums;
 
 namespace Senai.Domain.Dtos
 {
-    internal class ClasseDto
+    public class ClasseDto
     {
         public SerieEnum Serie { get; set; }
 

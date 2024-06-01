@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Senai.Domain.Dtos
 {
-    internal class AlunoDto
+    public class AlunoDto
     {
         [Required, MaxLength(60)]
         public string Nome { get; set; } = string.Empty;

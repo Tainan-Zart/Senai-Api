@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Senai.Domain.Dtos
 {
-    internal class EnderecoDto
+    public class EnderecoDto
     {
         [MaxLength(80)]
         public string Rua { get; set; } = string.Empty;

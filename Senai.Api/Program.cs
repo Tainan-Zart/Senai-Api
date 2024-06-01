@@ -1,3 +1,10 @@
+using AutoMapper;
+using Senai.Domain.Interfaces;
+using Senai.Repository.Context;
+using Senai.Repository.Repositories;
+using Senai.Service.Interfaces;
+using Senai.Service.Services;
+
 namespace Senai.Api
 {
     public class Program
@@ -10,6 +17,24 @@ namespace Senai.Api
 
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<SenaiContext>();
+
+            #region Injeção Services
+
+            builder.Services.AddScoped<IEscolaService, EscolaService>();
+
+            #endregion
+
+            builder.Services.AddScoped<IEscolaRepository, EscolaRepository>();
+
+
+            MapperConfiguration mapperConfiguration = new MapperConfiguration(mapperConfiguration =>
+            {
+                mapperConfiguration.AddMaps(new[] { "Senai.Service" });
+
+            });
+            builder.Services.AddSingleton(mapperConfiguration.CreateMapper());
 
             var app = builder.Build();
 
