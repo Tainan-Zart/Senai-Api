@@ -20,7 +20,7 @@ namespace Senai.Api.Controllers
         public IActionResult Salvar(EscolaDto model)
         {
 
-            var escola = _escolaService.Adicionar(model);
+            var escola = _escolaService.Salvar(model);
             return Ok(escola);
         }
 
@@ -32,12 +32,32 @@ namespace Senai.Api.Controllers
         }
 
         [HttpGet]
-        
-
+        [Route("BuscarPorId")]
         public IActionResult Get(long id)
         {
-           
-           return Ok();
+         var escolaId =  _escolaService.BuscarPorId(id);
+          return Ok(escolaId);
         }
+
+        [HttpGet]
+
+        public IActionResult GetAll()
+        {
+            var escola = _escolaService.BuscarTodos();
+
+            return Ok(escola);
+        }
+
+        [HttpPatch]
+        [Route("Editar")]
+
+        public IActionResult Patch(EscolaDto model)
+        {
+            var escola = _escolaService.Salvar(model);
+
+            return Ok(escola);
+        }
+
+        
     }
 }

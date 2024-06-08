@@ -17,10 +17,10 @@ namespace Senai.Service.Services
             _escolaRepository = escolaRepository;
         }
 
-        public bool Adicionar(EscolaDto model) {
+        public bool Salvar(EscolaDto model) {
 
             var entidade = _mapper.Map<Escola>(model);
-            return _escolaRepository.Adicionar(entidade);
+            return _escolaRepository.Salvar(entidade);
         }
 
         public bool Remover(long id)
@@ -32,6 +32,11 @@ namespace Senai.Service.Services
         {
            return _escolaRepository.BuscarPorId(id);
         }
+
+        public List<Escola> BuscarTodos()
+        {
+           return _escolaRepository.BuscarTodos().ToList();
+        } 
     }
 
 

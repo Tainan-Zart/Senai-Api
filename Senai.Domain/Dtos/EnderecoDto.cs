@@ -9,6 +9,10 @@ namespace Senai.Domain.Dtos
 {
     public class EnderecoDto
     {
+        
+
+        public long Id { get; set; }
+
         [MaxLength(80)]
         public string Rua { get; set; } = string.Empty;
 

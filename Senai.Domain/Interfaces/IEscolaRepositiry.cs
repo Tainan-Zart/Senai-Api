@@ -4,14 +4,13 @@ namespace Senai.Domain.Interfaces
 {
     public interface IEscolaRepository
     {
-        bool Adicionar(Escola entity);
+        bool Salvar(Escola entity);
 
         bool Remover(long id);
 
-        Escola BuscarPorId(long id);
+        Escola? BuscarPorId(long id);
 
-
-
+        IQueryable<Escola> BuscarTodos();
 
     }
 }

@@ -5,11 +5,13 @@ namespace Senai.Service.Interfaces
 {
     public interface IEscolaService
     {
-        bool Adicionar(EscolaDto model);
+        bool Salvar(EscolaDto model);
 
         bool Remover(long id);
 
         Escola? BuscarPorId(long id);
+
+        List<Escola> BuscarTodos();
 
 
     }

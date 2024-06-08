@@ -7,5 +7,7 @@ namespace Senai.Domain.NovaPasta1
     {
         [Required, MaxLength(60)]
         public string Nome { get; set; } = string.Empty;
+        public long Id { get; set; }
+        public long EscolaId { get; set; }    
     }
 }

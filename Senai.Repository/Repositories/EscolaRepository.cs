@@ -3,7 +3,7 @@ using Senai.Domain.Interfaces;
 using Senai.Repository.Context;
 using System.Linq.Expressions;
 
-namespace Senai.Repository.Repositories
+namespace Senai.Repository.Repository
 {
     public class EscolaRepository : IEscolaRepository
     {
@@ -15,14 +15,22 @@ namespace Senai.Repository.Repositories
         }
 
        
-        public bool Adicionar(Escola entity)
+        public bool Salvar(Escola entity)
         {
             try
             {
-                _context.Escola.Add(entity);
+                if(entity.Id == 0)
+                {
+                    _context.Escola.Add(entity);
+                }
+                else {
+                    _context.Escola.Update(entity);
+                }
+
                 _context.SaveChanges();
                 return true;
             }
+
             catch(Exception ex)
             {
                 return false;
@@ -32,7 +40,7 @@ namespace Senai.Repository.Repositories
 
         public Escola? BuscarPorId(long id)
         {
-             return _context.Escola.FirstOrDefault(e => e.Id == id);
+            return _context.Escola.FirstOrDefault(e => e.Id == id);
         }
 
         public bool Remover(long id)
@@ -53,6 +61,10 @@ namespace Senai.Repository.Repositories
             }
         }
 
+        public IQueryable<Escola> BuscarTodos()
+        {
+            return _context.Escola;
+        }
        
 
 
