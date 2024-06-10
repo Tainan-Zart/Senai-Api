@@ -15,7 +15,6 @@ namespace Senai.Service.Mappers
         public ProfessorMapper() {
 
             CreateMap<ProfessorDto, Professor>().ReverseMap();
-
         }
     }
 }

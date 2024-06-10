@@ -7,6 +7,10 @@ namespace Senai.Domain.Dtos
     {
         public SerieEnum Serie { get; set; }
 
-        public long ClasseId { get; set; }
+        public long EscolaId { get; set; }
+
+        public long ProfessorId { get; set; }
+
+        //public long ClasseId { get; set; }
     }
 }

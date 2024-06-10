@@ -20,5 +20,7 @@ namespace Senai.Domain.Dtos
 
         [Required, MaxLength(14)]
         public string Cpf { get; set; } = string.Empty;
+
+        public long ClasseId { get; set; }
     }
 }

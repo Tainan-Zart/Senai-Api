@@ -1,6 +1,7 @@
 using AutoMapper;
 using Senai.Domain.Interfaces;
 using Senai.Repository.Context;
+using Senai.Repository.Repositories;
 using Senai.Repository.Repository;
 using Senai.Service.Interfaces;
 using Senai.Service.Services;
@@ -24,11 +25,15 @@ namespace Senai.Api
 
             builder.Services.AddScoped<IEscolaService, EscolaService>();
             builder.Services.AddScoped<IProfessorService, ProfessorService>();
+            builder.Services.AddScoped<IAlunoService, AlunoService>();
+            builder.Services.AddScoped<IClasseService, ClasseService>();
 
             #endregion
 
             builder.Services.AddScoped<IEscolaRepository, EscolaRepository>();
             builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
+            builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
+            builder.Services.AddScoped<IClasseRepository, ClasseRepository>();
 
 
             MapperConfiguration mapperConfiguration = new MapperConfiguration(mapperConfiguration =>
@@ -58,5 +63,6 @@ namespace Senai.Api
 
             app.Run();
         }
+
     }
 }
