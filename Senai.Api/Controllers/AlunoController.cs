@@ -27,6 +27,14 @@ namespace Senai.Api.Controllers
             
         }
 
+        [HttpDelete]
+        [Route("Remover")]
+        public IActionResult Remover(long id)
+        {
+            var remover = _alunoService.Remover(id);
+            return Ok(remover);
+        }
+
 
 
 

@@ -19,9 +19,34 @@ public class AlunoRepository : IAlunoRepository
             _context.Aluno.Add(entity);
             _context.SaveChanges();
             return true;
-        }catch (Exception ex)
+        } catch (Exception ex)
         {
             return false;
         }
-}
-}
+    }
+
+    public bool Remover(long id)
+    {
+        try
+        {
+            var aluno = BuscarPorId(id);
+            if (aluno != null)
+            {
+                _context.Remove(aluno);
+                _context.SaveChanges();
+            }
+            return true;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
+        public Aluno? BuscarPorId(long id) {
+
+            return _context.Aluno.FirstOrDefault(e => e.Id == id);
+        }
+
+    }
+

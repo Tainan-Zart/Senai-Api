@@ -22,5 +22,10 @@ public class AlunoService : IAlunoService
         return _alunoRepository.Salvar(entidade);
     }
 
+    public bool Remover(long id)
+    {
+        return _alunoRepository.Remover(id);
+    }
+
 
 }
