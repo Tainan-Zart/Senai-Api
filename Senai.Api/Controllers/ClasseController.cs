@@ -23,4 +23,12 @@ public class ClasseController : ControllerBase
         var salvar = _classeService.Salvar(model);
         return Ok(salvar);
     }
+
+    [HttpDelete]
+
+    public IActionResult Delete(long id)
+    {
+        var remove = _classeService.Remove(id);
+        return Ok(remove);
+    }
 }

@@ -22,4 +22,9 @@ public class ClasseService : IClasseService
         var entidade = _mapper.Map<Classe>(model);
         return _classeRepository.Salvar(entidade);
     }
+
+    public bool Remove(long id) { 
+    
+        return _classeRepository.Delete(id);
+    }
 }
