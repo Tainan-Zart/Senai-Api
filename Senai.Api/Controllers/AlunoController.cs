@@ -44,12 +44,15 @@ namespace Senai.Api.Controllers
             return Ok(aluno);
 
         }
+
+
         [HttpGet]
         [Route("BuscarTodos")]
 
         public IActionResult GetAll() {
         
-           var todosAlunos = _alunoService
+           var todosAlunos = _alunoService.BuscarTodos();
+            return Ok(todosAlunos);
         
         }
 

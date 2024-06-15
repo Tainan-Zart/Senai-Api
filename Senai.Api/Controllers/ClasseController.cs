@@ -25,10 +25,20 @@ public class ClasseController : ControllerBase
     }
 
     [HttpDelete]
+    [Route("DeleteAluno")]
 
     public IActionResult Delete(long id)
     {
         var remove = _classeService.Remove(id);
         return Ok(remove);
+    }
+
+    [HttpGet]
+    [Route("BuscarPorId")]
+
+    public IActionResult Get(long id)
+    {
+        var classe = _classeService.BuscarPorId(id);
+        return Ok(classe);
     }
 }

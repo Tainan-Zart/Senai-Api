@@ -23,8 +23,14 @@ public class ClasseService : IClasseService
         return _classeRepository.Salvar(entidade);
     }
 
-    public bool Remove(long id) { 
-    
+    public bool Remove(long id)
+    {
+
         return _classeRepository.Delete(id);
+    }
+
+    public Classe? BuscarPorId(long id)
+    {
+        return _classeRepository.BuscarPorId(id);
     }
 }

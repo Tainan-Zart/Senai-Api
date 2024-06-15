@@ -27,13 +27,15 @@ namespace Senai.Api
             builder.Services.AddScoped<IProfessorService, ProfessorService>();
             builder.Services.AddScoped<IAlunoService, AlunoService>();
             builder.Services.AddScoped<IClasseService, ClasseService>();
-
+            builder.Services.AddScoped<INotaService, NotaService>();
+            
             #endregion
 
             builder.Services.AddScoped<IEscolaRepository, EscolaRepository>();
             builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
             builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
             builder.Services.AddScoped<IClasseRepository, ClasseRepository>();
+            builder.Services.AddScoped<INotaRepository, NotaRepository>();
 
 
             MapperConfiguration mapperConfiguration = new MapperConfiguration(mapperConfiguration =>

@@ -10,6 +10,7 @@ namespace Senai.Repository.Context
         public DbSet<Endereco> Endereco { get; set; }
         public DbSet<Professor> Professor { get; set; }
         public DbSet<Aluno> Aluno { get; set; }
+        public DbSet<Nota> Nota { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

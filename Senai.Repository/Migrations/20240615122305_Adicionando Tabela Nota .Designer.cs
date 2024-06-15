@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Senai.Repository.Context;
@@ -11,9 +12,10 @@ using Senai.Repository.Context;
 namespace Senai.Repository.Migrations
 {
     [DbContext(typeof(SenaiContext))]
-    partial class SenaiContextModelSnapshot : ModelSnapshot
+    [Migration("20240615122305_Adicionando Tabela Nota ")]
+    partial class AdicionandoTabelaNota
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

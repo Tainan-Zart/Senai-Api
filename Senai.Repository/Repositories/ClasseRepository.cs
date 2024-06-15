@@ -47,6 +47,8 @@ public class ClasseRepository : IClasseRepository
     { 
         return _context.Classe.FirstOrDefault(c => c.Id == id);
     }
+
+    
     
 
 }
