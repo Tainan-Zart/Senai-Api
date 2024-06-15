@@ -24,7 +24,7 @@ namespace Senai.Api.Controllers
         {
             var salvar = _alunoService.Salvar(model);
             return Ok(salvar);
-            
+
         }
 
         [HttpDelete]
@@ -33,6 +33,24 @@ namespace Senai.Api.Controllers
         {
             var remover = _alunoService.Remover(id);
             return Ok(remover);
+        }
+
+
+        [HttpGet]
+        [Route("BuscarPorId")]
+        public IActionResult Get(long id) {
+
+            var aluno = _alunoService.BuscarPorId(id);
+            return Ok(aluno);
+
+        }
+        [HttpGet]
+        [Route("BuscarTodos")]
+
+        public IActionResult GetAll() {
+        
+           var todosAlunos = _alunoService
+        
         }
 
 

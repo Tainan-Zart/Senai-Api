@@ -27,5 +27,14 @@ public class AlunoService : IAlunoService
         return _alunoRepository.Remover(id);
     }
 
+    public Aluno? BuscarPorId(long id)
+    {
+        return _alunoRepository.BuscarPorId(id);
+    }
+
+    public List<Aluno> BuscarTodos()
+    {
+        return _alunoRepository.BuscarTodos().ToList();
+    }
 
 }

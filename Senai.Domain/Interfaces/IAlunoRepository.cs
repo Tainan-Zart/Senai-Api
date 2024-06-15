@@ -8,4 +8,6 @@ public interface IAlunoRepository
     Aluno? BuscarPorId(long id);
 
     bool Remover(long id);
+
+    IQueryable<Aluno> BuscarTodos();
 }

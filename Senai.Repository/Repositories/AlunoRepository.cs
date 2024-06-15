@@ -43,10 +43,18 @@ public class AlunoRepository : IAlunoRepository
         }
     }
 
-        public Aluno? BuscarPorId(long id) {
+        
+    public Aluno? BuscarPorId(long id) {
 
             return _context.Aluno.FirstOrDefault(e => e.Id == id);
-        }
+    }
+
+    public IQueryable<Aluno> BuscarTodos()
+    {
+        return _context.Aluno;
+    }
+
+    
 
     }
 
