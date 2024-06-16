@@ -1,5 +1,4 @@
-﻿using Senai.Domain.Entidades;
-using Senai.Domain.Enums;
+﻿using Senai.Domain.Enums;
 
 namespace Senai.Domain.Dtos;
 public class NotaDto

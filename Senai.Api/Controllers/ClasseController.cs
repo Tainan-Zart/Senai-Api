@@ -41,4 +41,23 @@ public class ClasseController : ControllerBase
         var classe = _classeService.BuscarPorId(id);
         return Ok(classe);
     }
+
+    [HttpGet]
+    [Route("BuscarTodos")]
+
+    public IActionResult GetAll()
+    {
+        var classes = _classeService.BuscarTodos();
+        return Ok(classes);
+    }
+
+    [HttpPatch]
+    [Route("Editar")]
+
+    public IActionResult Editar(ClasseDto model)
+    {
+        var editar = _classeService.Salvar(model);
+        return Ok(editar);
+    }
+
 }

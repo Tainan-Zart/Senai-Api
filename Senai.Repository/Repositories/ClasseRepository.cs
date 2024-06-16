@@ -16,7 +16,15 @@ public class ClasseRepository : IClasseRepository
     {
         try
         {
-            _context.Classe.Add(entity);
+            if(entity.Id == 0)
+            {
+                _context.Classe.Add(entity);
+            }
+            else
+            {
+                _context.Update(entity);
+            }
+            
             _context.SaveChanges();
             return true;
         }
@@ -31,6 +39,7 @@ public class ClasseRepository : IClasseRepository
 
         try
         {
+            
             var classe = BuscarPorId(id);
             _context.Classe.Remove(classe);
             _context.SaveChanges();
@@ -43,11 +52,15 @@ public class ClasseRepository : IClasseRepository
         }
     }
 
-    public Classe? BuscarPorId(long id) 
-    { 
+    public Classe? BuscarPorId(long id)
+    {
         return _context.Classe.FirstOrDefault(c => c.Id == id);
     }
 
+    public IQueryable<Classe> BuscarTodos()
+    {
+        return _context.Classe;
+    }
     
     
 

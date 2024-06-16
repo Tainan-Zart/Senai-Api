@@ -1,6 +1,4 @@
-﻿using Senai.Domain.Enums;
-
-namespace Senai.Domain.Dtos;
+﻿namespace Senai.Domain.Dtos;
 
 public class MediaAlunoDto
 {

@@ -8,4 +8,6 @@ public  interface IClasseRepository
     Classe? BuscarPorId(long id);
 
     bool Delete(long id);
+
+    IQueryable<Classe> BuscarTodos();
 }

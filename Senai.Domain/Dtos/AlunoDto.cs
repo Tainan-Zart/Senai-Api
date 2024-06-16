@@ -1,26 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Senai.Domain.Entidades;
 
 namespace Senai.Domain.Dtos
 {
     public class AlunoDto
     {
-        [Required, MaxLength(60)]
+        
+        public long Id { get; set; }
         public string Nome { get; set; } = string.Empty;
-
-        [Required, MaxLength(60)]
         public string Sobrenome { get; set; }
-
-        [Required]
         public DateTime Nascimento { get; set; }
-
-        [Required, MaxLength(14)]
         public string Cpf { get; set; } = string.Empty;
-
         public long ClasseId { get; set; }
+
     }
 }

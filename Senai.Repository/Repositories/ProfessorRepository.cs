@@ -15,17 +15,18 @@ namespace Senai.Repository.Repository
 
         public bool Salvar(Professor entity)
         {
-            try
+            if (entity.Id == 0)
             {
                 _context.Professor.Add(entity);
-                _context.SaveChanges();
-                return true;
-
-            }catch (Exception ex)
-            {
-                return false;
             }
-           
+            else
+            {
+                _context.Professor.Update(entity);
+            }
+
+            _context.SaveChanges();
+            return true;
+
         }
 
         public bool Excluir(long id )

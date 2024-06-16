@@ -25,6 +25,7 @@ public class NotaController : ControllerBase
     }
 
     [HttpGet]
+    [Route("MediaAluno")]
 
     public IActionResult GetMediaNotas(MediaNotasPorAlunoESemestreDto nota) {
 
@@ -32,4 +33,8 @@ public class NotaController : ControllerBase
         return Ok(media);
     
     }
+
+
+
+
 }

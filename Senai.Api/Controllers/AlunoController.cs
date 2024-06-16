@@ -19,6 +19,7 @@ namespace Senai.Api.Controllers
         }
 
         [HttpPost]
+        [Route("Salvar")]
 
         public IActionResult Salvar(AlunoDto model)
         {
@@ -54,6 +55,15 @@ namespace Senai.Api.Controllers
            var todosAlunos = _alunoService.BuscarTodos();
             return Ok(todosAlunos);
         
+        }
+
+        [HttpPatch]
+        [Route("Editar")]
+
+        public IActionResult Editar(AlunoDto model)
+        {
+            var editar = _alunoService.Salvar(model);
+            return Ok(editar);
         }
 
 

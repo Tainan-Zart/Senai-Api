@@ -33,4 +33,9 @@ public class ClasseService : IClasseService
     {
         return _classeRepository.BuscarPorId(id);
     }
+
+    public List<Classe> BuscarTodos()
+    {
+        return _classeRepository.BuscarTodos().ToList();
+    }
 }

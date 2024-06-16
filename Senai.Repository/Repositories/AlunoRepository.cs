@@ -16,7 +16,13 @@ public class AlunoRepository : IAlunoRepository
     {
         try
         {
-            _context.Aluno.Add(entity);
+            if (entity.Id == 0)
+            {
+                _context.Aluno.Add(entity);
+            }else
+            {
+                _context.Aluno.Update(entity);
+            }
             _context.SaveChanges();
             return true;
         } catch (Exception ex)

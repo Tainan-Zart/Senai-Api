@@ -54,5 +54,17 @@ namespace Senai.Api.Controllers
             var buscarTodos = _professorService.BuscarTodos();
             return Ok(buscarTodos);
         }
-    }
+
+        [HttpPatch]
+        [Route("Editar")]
+
+        public IActionResult Editar(ProfessorDto model)
+        {
+            var editar = _professorService.Salvar(model);
+            return Ok(editar);
+        }
+        
+
+
+}
 }

@@ -8,4 +8,5 @@ public interface IClasseService
 
     bool Remove(long id);
     Classe? BuscarPorId(long id);
+    List<Classe> BuscarTodos();
 }
